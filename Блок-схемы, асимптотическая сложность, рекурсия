@@ -1,0 +1,61 @@
+using System;
+
+namespace Algoritm_and_struktures
+{
+    class Program
+    {
+        public static int fibonaccinerec(int fb)
+        {
+            int f1 = 1;
+            int f2 = 1;
+            Console.WriteLine(0);
+            Console.WriteLine(f1);
+            Console.WriteLine(f2);
+            int isk = 0;
+            while (isk < fb - 3)
+            {
+                int fbsum = f1 + f2;
+                f1 = f2;
+                f2 = fbsum;
+                isk++;
+                Console.WriteLine(fbsum);
+            }
+            return 0;
+        }
+        public static int fibonacci(int f)
+        {
+            if (f == 0)
+                return 0; 
+            if (f == 1)
+                return 1; 
+            return fibonacci(f - 1) + fibonacci(f - 2);
+        }
+
+        public static int  Proverka(int number)
+        {
+            int d = 0;
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0)
+                    d++;
+            }
+            if (d == 0)
+                Console.WriteLine("Число простое");
+            else
+                Console.WriteLine("Число не простое");
+            return 0;
+        }
+        static void Main(string[] args)
+        {
+            Proverka(12);
+            Proverka(7);
+            int fib = Convert.ToInt32(Console.ReadLine());
+
+            for (int j = 0; j < fib; ++j)
+                Console.WriteLine(fibonacci(j));
+
+            fibonaccinerec(fib);
+
+        }
+    }
+}  
